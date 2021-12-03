@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+group 'io.github.HuangLinBao'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'org.openjfx', name: 'javafx-controls', version: '17'
+    implementation group: 'org.openjfx', name: 'javafx-fxml', version: '17'
+    implementation group: 'com.jfoenix', name: 'jfoenix', version: '9.0.10'
+    implementation 'javax.json:javax.json-api:1.1.4'
+
+
+}
+
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+
+mainClassName = 'io.github.HuangLinBao.MainApp'
+
+test {
+    useJUnitPlatform()
+}
