@@ -16,7 +16,7 @@
                     </font></JFXTextField>
                 <VBox alignment="CENTER" spacing="10.0">
                     <children>
-                        <JFXButton fx:id="Button_listen" buttonType="RAISED" mnemonicParsing="false" prefWidth="150.0" text="Start Listening" textFill="WHITE">
+                        <JFXButton fx:id="Button_listen" buttonType="RAISED" mnemonicParsing="false" onAction="#listen" prefWidth="150.0" text="Start Listening" textFill="WHITE">
                             <font>
                                 <Font name="Product Sans Bold" size="15.0" />
                             </font></JFXButton>
