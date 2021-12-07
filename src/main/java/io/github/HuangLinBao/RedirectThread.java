@@ -15,6 +15,8 @@ public class RedirectThread extends Thread {
                 message = inFromClient.readLine();
                 if(message.contains(",")){
                     msg = message.split(",");
+                    System.out.println(msg[1]);
+                    System.out.println(msg[2]);
                     Socket clientSocket = new Socket(msg[1],Integer.parseInt(msg[2]));
                     DataOutputStream outToPeer = new DataOutputStream(clientSocket.getOutputStream());
                     outToPeer.writeBytes(msg[0]);
