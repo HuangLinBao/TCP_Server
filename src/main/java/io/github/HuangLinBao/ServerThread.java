@@ -2,6 +2,7 @@ package io.github.HuangLinBao;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 
 public class ServerThread extends Thread  {
 
@@ -35,8 +36,9 @@ public class ServerThread extends Thread  {
                    for (int i = 0;i < sent.length;i++){
                        str = sent[i].split("-");
                        System.out.println(str[1]);
+                       byte[] ip = str[1].getBytes();
                        System.out.println(str[2]);
-                       Socket clientSocket = new Socket(str[1].trim(),Integer.parseInt(str[2].trim()));
+                       Socket clientSocket = new Socket(InetAddress.getByAddress(ip),Integer.parseInt(str[2].trim()));
                        DataOutputStream outToPeer = new DataOutputStream(clientSocket.getOutputStream());
                        outToPeer.writeBytes(Controller.sb.toString());
                        clientSocket.close();
